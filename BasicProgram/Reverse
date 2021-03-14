@@ -1,0 +1,21 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello World!");
+            //String[] s1 = new String[100];
+            Console.WriteLine(" Enter the String ");
+            String mystr  =Console.ReadLine();
+            //Console.WriteLine(mystr);
+            char[] myarr = mystr.ToCharArray();
+            Array.Reverse(myarr);
+            string revstr = new string(myarr);
+            Console.WriteLine("{0} Original  Sttring  is ",mystr);
+            Console.WriteLine("{0} Reverse Sttring  is ",revstr);
+        }
+    }
+}
