@@ -1,0 +1,46 @@
+using System;
+ 
+ 
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("enter the Degree");
+            double angle = Convert.ToInt32(Console.ReadLine());
+
+            //convert the radiant
+            angle = (angle / 180.0) * Math.PI;
+            //Console.WriteLine(rad);
+
+            // x- x3/3! + x5/5! - x7/7!
+            double sum = 0;
+            double sign = +1;
+            for (int i =1; i< 30;i = i+2) // i=2 bcz it increse by 2 
+            {
+                //calc power of x
+                double x = 1;
+                for (int j = 0; j < i; j++)
+                    x = x * angle;
+                    //Console.WriteLine(x);
+
+                //calcu the factorial
+                double fact = 1;
+                for (int j = 2; j <= i; j++)
+                    fact = fact * j;
+
+                //cal term
+                double t = sign * x / fact;
+                sign = -sign; //change sign
+
+                //sum
+                sum = sum + t;
+            }
+            Console.WriteLine("The Angle of the Sin is {0} ", sum);
+             
+        }
+
+
+    }
+}
