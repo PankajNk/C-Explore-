@@ -1,0 +1,23 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the year to find whaether leap year or not ");
+            int year = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine(year);
+
+            if ((year % 4 ==0 && year% 100 !=0 ) || (year % 400 ==0 ))
+                    {
+                Console.WriteLine(" {0} is a Leap Year ",year);
+            }
+            else
+            {
+                Console.WriteLine("{0} is not Leap Year",year);
+            }
+        }
+    }
+}
