@@ -1,0 +1,41 @@
+using System;
+using System.IO;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello World!");
+            FileInfo fi = new FileInfo(@"I:\\c#PRogram\\fileinfomsg.txt");
+            //create ,read file
+            FileStream fs = fi.Open(FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
+
+            //later help in write and dispaly the text in file
+            StreamReader sr = new StreamReader(fs);
+            StreamWriter sw = new StreamWriter(fs);
+
+             
+            sw.WriteLine(" Always explore ,Life is too short ");
+            
+            string fileContent = sr.ReadToEnd();
+            Console.Write(" Content "+fileContent);  //ReadToEnd() read all text in file
+            
+            sw.Close();
+            sr.Close();
+
+            //Gettting all properities 
+
+            Console.WriteLine("Porperities \n Directory :" + fi.Directory +
+                                "\n DirectoryName " + fi.DirectoryName +
+                                "\n Exists " + fi.Exists +
+                                "\n Extension " + fi.Extension +
+                                "\n FullName " + fi.FullName +
+                                "\n IsReadOnly " + fi.IsReadOnly +
+                                "\n LastAcesTime " + fi.LastAccessTime +
+                                "\n LastWriteTime " + fi.LastWriteTime +
+                                "\n Length " + fi.Length +
+                                "\n Name " + fi.Name);
+        }
+    }
+}
