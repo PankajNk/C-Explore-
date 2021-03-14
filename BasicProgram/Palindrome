@@ -1,0 +1,39 @@
+  using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //int r, c, space, n, number;
+            Console.WriteLine("enter the heigth of Pascal triangle ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            //for row
+            for (int r = 0; r < num; r++)
+            {
+                //for space it vulata of pascal
+                for (int c = num; c > r; c--)
+                {
+                    Console.Write(" ");
+                }
+                    
+                int n = 1; //border is 1
+                for (int c = 0; c <= r; c++)
+                {
+                    Console.Write( n+ " " );
+                    //main logic
+                    n = n * (r - c) / (c + 1);
+                }
+                Console.WriteLine();
+             
+            }
+                
+                
+
+            
+
+        }
+    }
+}
